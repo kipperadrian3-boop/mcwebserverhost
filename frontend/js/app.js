@@ -5,13 +5,13 @@
 
 // ===== CONFIGURATION =====
 const CONFIG_KEY = 'mc-panel-config';
-const CORS_PROXY = 'https://corsproxy.io/?';
+const CORS_PROXY = 'https://api.codetabs.com/v1/proxy?quest=';
 
 let config = {
   panelUrl: 'https://client.falixnodes.net',
   apiKey: 'flx_live_McsOfrNtwbkoFQlR62Nfq1ylBpRZL4ZWr3FttK5W',
   serverId: '3438668',
-  useProxy: false
+  useProxy: true
 };
 
 let ws = null;

@@ -1,3 +1,5 @@
+//u think u will find something LOL
+
 // ============================================
 // MC SERVER PANEL — Complete Application
 // Steuert den Minecraft Server über Pterodactyl API
@@ -8,10 +10,10 @@ const CONFIG_KEY = 'mc-panel-config';
 const CORS_PROXY = 'https://api.codetabs.com/v1/proxy?quest=';
 
 let config = {
-  panelUrl: 'https://client.falixnodes.net',
-  apiKey: 'flx_live_McsOfrNtwbkoFQlR62Nfq1ylBpRZL4ZWr3FttK5W',
+  panelUrl: '',
+  apiKey: 'flx_live_McsOfrNtwbkoFQlR62Nfq1ylBpRZL4ZWr3FttK5W', // WIRD VOM USER GEÄNDERT
   serverId: '3438668',
-  useProxy: true
+  useProxy: false
 };
 
 let ws = null;
@@ -26,41 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
 });
 
-// ===== CONFIG / SETUP =====
 function loadConfig() {
-  if (config.panelUrl && config.apiKey && config.serverId) {
-    connectToPanel();
-  } else {
-    showSetup();
-  }
+  connectToPanel();
 }
 
 function saveConfig() {
   localStorage.setItem(CONFIG_KEY, JSON.stringify(config));
 }
 
-function showSetup() {
-  document.getElementById('setup-screen').classList.remove('hidden');
-  document.getElementById('app').classList.add('hidden');
-  stopPolling();
-}
-
-function showApp() {
-  document.getElementById('setup-screen').classList.add('hidden');
-  document.getElementById('app').classList.remove('hidden');
-}
-
 async function connectToPanel() {
-  const btn = document.getElementById('btn-connect');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span> Verbinde...';
-
   try {
     // Test connection
     const data = await apiCall(`/api/client/servers/${config.serverId}`);
 
     if (data && data.attributes) {
-      showApp();
       toast('Verbunden!', 'success');
 
       // Server info setzen
@@ -95,11 +76,7 @@ async function connectToPanel() {
     }
   } catch (err) {
     toast('Verbindung fehlgeschlagen: ' + err.message, 'error');
-    showSetup();
   }
-
-  btn.disabled = false;
-  btn.innerHTML = '<span class="btn-icon">🔗</span> Verbinden';
 }
 
 // ===== API CALLS =====

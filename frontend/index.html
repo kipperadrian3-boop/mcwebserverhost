@@ -15,60 +15,8 @@
   <!-- ========== TOAST NOTIFICATIONS ========== -->
   <div id="toast-container"></div>
 
-  <!-- ========== SETUP / CONFIG SCREEN ========== -->
-  <div id="setup-screen">
-    <div class="setup-bg-grid"></div>
-    <div class="setup-glow setup-glow-1"></div>
-    <div class="setup-glow setup-glow-2"></div>
-
-    <div class="setup-card">
-      <div class="setup-logo">
-        <div class="setup-logo-icon">⛏️</div>
-        <h1>MC Server Panel</h1>
-        <p>Verbinde dich mit deinem Minecraft Server</p>
-      </div>
-
-      <form id="setup-form">
-        <div class="form-group">
-          <label for="cfg-panel-url">Panel URL</label>
-          <input type="url" id="cfg-panel-url" placeholder="https://panel.falixnodes.net" required>
-          <span class="form-hint">Die URL deines Pterodactyl Panels</span>
-        </div>
-
-        <div class="form-group">
-          <label for="cfg-api-key">API Key</label>
-          <input type="password" id="cfg-api-key" placeholder="ptlc_xxxxxxxxxxxxxxxx" required>
-          <span class="form-hint">Findest du unter Account → API Credentials</span>
-        </div>
-
-        <div class="form-group">
-          <label for="cfg-server-id">Server ID</label>
-          <input type="text" id="cfg-server-id" placeholder="abc12345" required>
-          <span class="form-hint">Der Code in der URL: panel.../server/<strong>abc12345</strong></span>
-        </div>
-
-        <div class="form-group">
-          <label class="checkbox-label">
-            <input type="checkbox" id="cfg-use-proxy" checked>
-            <span class="checkmark"></span>
-            CORS Proxy verwenden (empfohlen)
-          </label>
-          <span class="form-hint">Aktivieren falls direkte Verbindung blockiert wird</span>
-        </div>
-
-        <button type="submit" class="btn-primary btn-lg" id="btn-connect">
-          <span class="btn-icon">🔗</span> Verbinden
-        </button>
-      </form>
-
-      <div class="setup-footer">
-        <p>Noch keinen Server? <a href="https://falixnodes.net" target="_blank">Gratis bei FalixNodes erstellen →</a></p>
-      </div>
-    </div>
-  </div>
-
   <!-- ========== MAIN APP ========== -->
-  <div id="app" class="hidden">
+  <div id="app">
 
     <!-- Sidebar -->
     <nav id="sidebar">
@@ -98,14 +46,6 @@
           <span class="nav-icon">⚙️</span>
           <span class="nav-label">Einstellungen</span>
         </a>
-      </div>
-
-      <div class="sidebar-footer">
-        <button class="nav-item nav-disconnect" id="btn-disconnect">
-          <span class="nav-icon">🚪</span>
-          <span class="nav-label">Trennen</span>
-        </button>
-      </div>
     </nav>
 
     <!-- Main Content -->

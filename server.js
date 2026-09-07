@@ -10,7 +10,7 @@ app.use(express.json());
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, 'frontend')));
 
-const PANEL_URL = 'https://panel.falixnodes.net';
+const PANEL_URL = 'https://client.falixnodes.net';
 
 app.all('/api/*', async (req, res) => {
   try {

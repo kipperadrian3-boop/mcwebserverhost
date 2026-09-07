@@ -28,22 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== CONFIG / SETUP =====
 function loadConfig() {
-  const saved = localStorage.getItem(CONFIG_KEY);
-  if (saved) {
-    try {
-      config = JSON.parse(saved);
-      document.getElementById('cfg-panel-url').value = config.panelUrl || '';
-      document.getElementById('cfg-api-key').value = config.apiKey || '';
-      document.getElementById('cfg-server-id').value = config.serverId || '';
-      document.getElementById('cfg-use-proxy').checked = config.useProxy !== false;
-
-      if (config.panelUrl && config.apiKey && config.serverId) {
-        connectToPanel();
-        return;
-      }
-    } catch (e) { /* ignore */ }
+  if (config.panelUrl && config.apiKey && config.serverId) {
+    connectToPanel();
+  } else {
+    showSetup();
   }
-  showSetup();
 }
 
 function saveConfig() {

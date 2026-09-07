@@ -8,9 +8,9 @@ const CONFIG_KEY = 'mc-panel-config';
 const CORS_PROXY = 'https://corsproxy.io/?';
 
 let config = {
-  panelUrl: '',
-  apiKey: '',
-  serverId: '',
+  panelUrl: 'https://client.falixnodes.net',
+  apiKey: 'flx_live_McsOfrNtwbkoFQlR62Nfq1ylBpRZL4ZWr3FttK5W',
+  serverId: '3438668',
   useProxy: true
 };
 

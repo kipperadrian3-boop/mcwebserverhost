@@ -11,7 +11,7 @@ let config = {
   panelUrl: 'https://client.falixnodes.net',
   apiKey: 'flx_live_McsOfrNtwbkoFQlR62Nfq1ylBpRZL4ZWr3FttK5W',
   serverId: '3438668',
-  useProxy: true
+  useProxy: false
 };
 
 let ws = null;
